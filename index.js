@@ -29,3 +29,12 @@ db.sequelize.sync().then((result) => {
         res.status(500).send({ message: error.message });
     }
 });
+
+app.get('/kandang', async (req, res) => {
+    try {
+        const kandang = await db.Kandang.findAll();
+        res.send(kandang);
+    } catch (error) {
+        res.status(500).send({ message: error.message });
+    }
+});
