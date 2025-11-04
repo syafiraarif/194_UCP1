@@ -41,10 +41,10 @@ app.get('/kandang', async (req, res) => {
 
 
 app.put('/kandang/:ID', async (req, res) => {
-    const id = req.params.id;
+    const ID = req.params.ID;
     const data = req.body;
     try {
-        const kandang = await db.Kandang.findByPk(id);
+        const kandang = await db.Kandang.findByPk(ID);
         if (!kandang) {
             return res.status(404).send({ message: "Kandang not found" });
         }
@@ -56,9 +56,9 @@ app.put('/kandang/:ID', async (req, res) => {
 });
 
 app.delete('/kandang/:ID', async (req, res) => {
-    const id = req.params.id;
+    const ID = req.params.ID;
     try {
-        const kandang = await db.Kandang.findByPk(id);
+        const kandang = await db.Kandang.findByPk(ID);
         if (!kandang) {
             return res.status(404).send({ message: "Kandang not found" });
         }

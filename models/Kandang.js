@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
 
-        Nama_Hewan: {
+        Nama_hewan: {
             type: DataTypes.STRING,
             allowNull: false
         },
